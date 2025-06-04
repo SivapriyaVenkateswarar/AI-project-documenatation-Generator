@@ -30,7 +30,6 @@ def build_tree_with_metadata(path, root_path=None, depth=0):
 
     if os.path.isdir(path):
         if name in EXCLUDE_FOLDERS:
-            # Skip excluded folders completely
             return None
 
         node = {
