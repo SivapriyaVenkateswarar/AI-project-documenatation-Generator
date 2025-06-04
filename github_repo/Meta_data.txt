@@ -1,0 +1,17 @@
+class FileNode:
+    name: str
+    path: str
+    type: str
+    extension: str
+    depth: int
+    language: str
+    analysis: Optional[FileAnalysis] = None
+
+class FileAnalysis:
+    lines_of_code: int
+    classes_count: int
+    functions_count: int
+    imports: List[str]
+    has_docstrings: bool
+    summary_generated: bool
+    uml_target: bool
