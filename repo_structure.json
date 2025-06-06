@@ -1,0 +1,128 @@
+{
+  "name": "cloned_repos",
+  "path": ".",
+  "type": "folder",
+  "depth": 0,
+  "children": [
+    {
+      "name": "Application",
+      "path": "Application",
+      "type": "folder",
+      "depth": 1,
+      "children": [
+        {
+          "name": "Utils",
+          "path": "Application/Utils",
+          "type": "folder",
+          "depth": 2,
+          "children": [
+            {
+              "name": "Visualization",
+              "path": "Application/Utils/Visualization",
+              "type": "folder",
+              "depth": 3,
+              "children": [
+                {
+                  "name": "server_logs_graph.py",
+                  "path": "Application/Utils/Visualization/server_logs_graph.py",
+                  "type": "file",
+                  "extension": ".py",
+                  "depth": 4,
+                  "language": "Python"
+                },
+                {
+                  "name": "ssh_logs_graph.py",
+                  "path": "Application/Utils/Visualization/ssh_logs_graph.py",
+                  "type": "file",
+                  "extension": ".py",
+                  "depth": 4,
+                  "language": "Python"
+                }
+              ]
+            },
+            {
+              "name": "pre_processing.py",
+              "path": "Application/Utils/pre_processing.py",
+              "type": "file",
+              "extension": ".py",
+              "depth": 3,
+              "language": "Python"
+            },
+            {
+              "name": "recommender.py",
+              "path": "Application/Utils/recommender.py",
+              "type": "file",
+              "extension": ".py",
+              "depth": 3,
+              "language": "Python"
+            }
+          ]
+        },
+        {
+          "name": "app.py",
+          "path": "Application/app.py",
+          "type": "file",
+          "extension": ".py",
+          "depth": 2,
+          "language": "Python"
+        }
+      ]
+    },
+    {
+      "name": "Models",
+      "path": "Models",
+      "type": "folder",
+      "depth": 1,
+      "children": [
+        {
+          "name": "Phishing_detection.ipynb",
+          "path": "Models/Phishing_detection.ipynb",
+          "type": "file",
+          "extension": ".ipynb",
+          "depth": 2,
+          "language": "Unknown"
+        },
+        {
+          "name": "SSH.ipynb",
+          "path": "Models/SSH.ipynb",
+          "type": "file",
+          "extension": ".ipynb",
+          "depth": 2,
+          "language": "Unknown"
+        },
+        {
+          "name": "Sever_logs.ipynb",
+          "path": "Models/Sever_logs.ipynb",
+          "type": "file",
+          "extension": ".ipynb",
+          "depth": 2,
+          "language": "Unknown"
+        },
+        {
+          "name": "System_intrusion_detection.ipynb",
+          "path": "Models/System_intrusion_detection.ipynb",
+          "type": "file",
+          "extension": ".ipynb",
+          "depth": 2,
+          "language": "Unknown"
+        },
+        {
+          "name": "incident_log.ipynb",
+          "path": "Models/incident_log.ipynb",
+          "type": "file",
+          "extension": ".ipynb",
+          "depth": 2,
+          "language": "Unknown"
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file",
+      "extension": ".md",
+      "depth": 1,
+      "language": "Unknown"
+    }
+  ]
+}
