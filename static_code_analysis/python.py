@@ -57,7 +57,7 @@ def build_code_analysis_tree(path, root_path=None, depth=0):
         except Exception as e:
             print(f"[!] Error reading directory {path}: {e}")
 
-        return node  # ✅ always return folder node even if empty
+        return node  
     else:
         if not path.endswith(".py"):
             return None
