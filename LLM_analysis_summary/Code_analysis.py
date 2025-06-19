@@ -1,14 +1,11 @@
 import os
 import json
 import google.generativeai as genai
-# === Setup Gemini ===
 api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key="AIzaSyAV9KOb6L2eB-a7W-3imCSTGzVvc7ynViw")
 
-# Load Gemini model (1.5 Flash is fast + cost-effective)
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
-# === Helpers ===
 def read_file_content(base_path, rel_path):
     abs_path = os.path.join(base_path, rel_path)
     try:
@@ -42,7 +39,6 @@ Has Docstrings: {file_node['has_docstrings']}
 
 def call_gemini(prompt):
     try:
-        print("Call_gemini_1")
         response = model.generate_content(prompt)
         return response.text.strip()
     except Exception as e:
@@ -62,16 +58,9 @@ def walk_and_process(tree_node, base_path):
         for child in tree_node.get("children", []):
             walk_and_process(child, base_path) 
 
-
-
-# ==== Config ====
-print("This is me")
 BASE_REPO_PATH = r"P:\AI_Documentation\github_repo\cloned_repos"
 INPUT_TREE_JSON = r"P:\AI_Documentation\code_analysis.json"
 
-# Load code tree
 with open(INPUT_TREE_JSON, "r", encoding="utf-8") as f:
     tree = json.load(f)
-print("Working?")
-# Walk and process with Gemini
 walk_and_process(tree, BASE_REPO_PATH)
