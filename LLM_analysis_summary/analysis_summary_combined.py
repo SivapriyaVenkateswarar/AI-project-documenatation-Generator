@@ -3,7 +3,7 @@ import json
 import google.generativeai as genai
 
 # === Gemini Setup ===
-genai.configure(api_key="AIzaSyAV9KOb6L2eB-a7W-3imCSTGzVvc7ynViw")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 # === Read Python file ===
@@ -105,3 +105,4 @@ with open(OUTPUT_TREE_JSON, "w", encoding="utf-8") as f:
     json.dump(tree, f, indent=2, ensure_ascii=False)
 
 print(f"\n✅ Enhanced JSON saved to: {OUTPUT_TREE_JSON}")
+
