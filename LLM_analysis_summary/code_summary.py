@@ -2,9 +2,12 @@ import os
 import json
 import google.generativeai as genai
 
-api_key = os.getenv("GEMINI_API_KEY")
-genai.configure(api_key="AIzaSyAV9KOb6L2eB-a7W-3imCSTGzVvc7ynViw")
+from dotenv import load_dotenv
 
+load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 def read_file_content(base_path, rel_path):
@@ -71,3 +74,4 @@ INPUT_TREE_JSON = r"P:\AI_Documentation\code_analysis.json"
 with open(INPUT_TREE_JSON, "r", encoding="utf-8") as f:
     tree = json.load(f)
 walk_and_process(tree, BASE_REPO_PATH)
+
