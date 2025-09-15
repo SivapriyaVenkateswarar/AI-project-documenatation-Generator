@@ -1,8 +1,11 @@
 import os
 import google.generativeai as genai
+from dotenv import load_dotenv
 
-genai.configure(api_key="AIzaSyAV9KOb6L2eB-a7W-3imCSTGzVvc7ynViw")  
+load_dotenv()
 
+api_key = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=api_key)
 COMBINED_MARKDOWN = "complete_code_summary.md"  
 PLANTUML_DIR = "uml"
 OUTPUT_FILE = "combined_diagram.puml"  
@@ -55,3 +58,4 @@ def process_combined_file():
         print(f"[!] Error: {e}")
 
 process_combined_file()
+
