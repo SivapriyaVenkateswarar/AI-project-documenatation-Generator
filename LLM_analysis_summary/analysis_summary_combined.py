@@ -1,8 +1,12 @@
 import os
 import json
 import google.generativeai as genai
+from dotenv import load_dotenv
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
 def read_file_content(base_path, rel_path):
@@ -99,5 +103,6 @@ with open(OUTPUT_TREE_JSON, "w", encoding="utf-8") as f:
     json.dump(tree, f, indent=2, ensure_ascii=False)
 
 print(f"\n Enhanced JSON saved to: {OUTPUT_TREE_JSON}")
+
 
 
