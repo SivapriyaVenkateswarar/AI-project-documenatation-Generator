@@ -2,11 +2,9 @@ import os
 import json
 import google.generativeai as genai
 
-# === Gemini Setup ===
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("models/gemini-1.5-flash")
 
-# === Read Python file ===
 def read_file_content(base_path, rel_path):
     abs_path = os.path.join(base_path, rel_path)
     try:
@@ -16,7 +14,6 @@ def read_file_content(base_path, rel_path):
         print(f"[!] Could not read {rel_path}: {e}")
         return ""
 
-# === Prompt 1: Summary for Docs ===
 def generate_summary_prompt(file_node, content):
     truncated_code = content[:1500]
     return f"""
@@ -43,7 +40,6 @@ Functions: {file_node['functions_count']}
 ### End Code.
 """
 
-# === Prompt 2: Developer-Oriented Analysis ===
 def generate_analysis_prompt(file_node, content):
     truncated_code = content[:1500]
     return f"""
@@ -90,12 +86,10 @@ def walk_and_process(tree_node, base_path):
         for child in tree_node.get("children", []):
             walk_and_process(child, base_path)
 
-# === Config Paths ===
 BASE_REPO_PATH = r"P:\AI_Documentation\github_repo\cloned_repos"
 INPUT_TREE_JSON = r"P:\AI_Documentation\code_analysis.json"
 OUTPUT_TREE_JSON = r"P:\AI_Documentation\annotated_code_analysis.json"
 
-# === Load Tree ===
 with open(INPUT_TREE_JSON, "r", encoding="utf-8") as f:
     tree = json.load(f)
 
@@ -104,5 +98,6 @@ walk_and_process(tree, BASE_REPO_PATH)
 with open(OUTPUT_TREE_JSON, "w", encoding="utf-8") as f:
     json.dump(tree, f, indent=2, ensure_ascii=False)
 
-print(f"\n✅ Enhanced JSON saved to: {OUTPUT_TREE_JSON}")
+print(f"\n Enhanced JSON saved to: {OUTPUT_TREE_JSON}")
+
 
